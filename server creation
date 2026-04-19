@@ -1,0 +1,17 @@
+const http = require("http");
+const path = require("path");
+const os = require("os");
+const EventEmitter = require("events");
+const emitter = new EventEmitter();
+emitter.on("wedd",()=>{
+    console.log("hello it is my wedding today");
+});
+emitter.emit("wedd");
+const server = http.createServer((req,res)=>{
+    res.end("hi this is my frst server creation");
+});
+server.listen(3000);
+const filepath = path.join("aru","armili.txt");
+console.log(filepath);
+console.log(os.platform());
+console.log(os.arch());
